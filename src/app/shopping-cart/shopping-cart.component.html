@@ -1,0 +1,41 @@
+<h1>{{ 'cart.cart_name' | translate }}</h1>
+<div class="row">
+	<div class="col-md-12">
+		<ul class="list-group">
+			<li class="list-group-item" *ngFor="let product of products">
+				<div class="row">
+					<div class="col-md-2">
+						<img [src]=" product?.imageUrl[0] " class="img-responsive">
+					</div>
+					<div class="col-md-10">
+						<div class="col-md-12">
+							<h3>{{product.name}}</h3>
+						</div>
+						<div class="col-md-3">
+							<span>{{ 'product.category' | translate }}: {{product.category}}</span>
+							<br>
+							<span>{{ 'product.gender' | translate }}: {{product.gender}}</span>
+							<br>
+							<span>{{ 'product.size' | translate }}: {{product?.sizes}}</span>
+							<br>
+						<span>{{ 'product.color' | translate }}: <div class="colorframe"  [ngStyle]="{'background-color': product?.colors}"></div></span>
+						</div>
+						<div class="col-md-3">
+							<strong>{{ 'product.quantity' | translate }}:</strong>
+							<input (change)="onChange($event, product)" type="number" name="quantity" class="txtQuantity" value="{{product.quantity}}">
+						</div>
+						<div class="col-md-3">
+								€ {{(product.price * product.quantity)  | number : '1.2-2' }}
+							</div>
+						<div class="col-md-3 remove">
+							<button class="btn btn-danger" (click)="onRemove(product._id, product.sizes, product.colors)">
+								<i-trash-2></i-trash-2>
+							</button>
+						</div>
+					</div>
+				</div>
+			</li>
+		</ul>
+		<button [routerLink]="['confirm']" class="btn btn-primary">{{ 'order.checkout' | translate }}</button>
+	</div>
+</div>

@@ -1,0 +1,41 @@
+.footer {
+	margin-top: 20px;
+	padding: 12px 0;
+	background-color: #eee;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+	z-index:3;
+}
+.footer-menu {
+	padding: 0;
+}
+.footer-menu li {
+	position: relative;
+	display: inline-block;
+	white-space: nowrap;
+	padding: 0 10px 0 2px;
+	transition: 0.2s;
+}
+.footer-menu li a {
+	text-decoration: none;
+}
+.footer-menu li:hover {
+
+}
+.footer-menu li:not(:last-child):after {
+	display: block;
+	position: absolute;
+	right: -1px;
+	top: 0;
+	content: '-';
+}
+
+a {
+  transition:.3s;
+}
+
+a:hover {
+  color:#7882ff; text-decoration:none!important;
+}

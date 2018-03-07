@@ -1,0 +1,46 @@
+<div class="coolbar-navigation--drop-down-content">
+  <div class="grid-wrapper--box-padding-s">
+    <div class="cart">
+      <table class="table table-condensed">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">{{ 'product.title' | translate }}</th>
+            <th scope="col">{{ 'product.quantity' | translate }}</th>
+            <th scope="col">{{ 'cart.price_total' | translate }}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let prods of products">
+            <td>{{ prods.name }}</td>
+            <td>{{ prods.quantity }}</td>
+            <td class="text-right">€ {{ prods.price * prods.quantity | number : '1.2-2'}}</td>
+          </tr>
+        </tbody>
+      </table>
+      <hr>
+      <div class="row">
+        <span class="col-md-8">
+          <strong>{{ 'product.shipping_cost' | translate }}:</strong>
+        </span>
+        <span class="col-md-4 pull-right">{{ 'product.free' | translate }}</span>
+      </div>
+      <div class="row">
+        <span class="col-md-8">
+          <strong>{{ 'cart.price_total' | translate }}:</strong>
+        </span>
+        <span class="col-md-4 pull-right">€ {{totalPrice}}</span>
+      </div>
+      <hr>
+      <div class="row">
+        <span class="col-md-7">
+          <button class="btn btn-primary" routerLink="/shoppingcart">{{ 'cart.details' | translate }}</button>
+        </span>
+        <span class="col-md-5">
+          <button class="btn btn-success btnpay" [routerLink]="['shoppingcart/confirm']">
+            {{ 'order.checkout' | translate }}
+          </button>
+        </span>
+      </div>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="row">
+
+    <!-- LOGGED IN USER -->
+    <div *ngIf="authenticated;else not_authenticated">
+      <app-shopping-cart-confirmation-form></app-shopping-cart-confirmation-form>
+    </div>
+    
+    <!-- ANONYMOUS USER -->
+    <ng-template #not_authenticated>
+      <div class="col-md-8">
+          <app-shopping-cart-confirmation-form></app-shopping-cart-confirmation-form>
+      </div>
+      <div class="col-md-4">
+        <h2>{{ 'auth.login' | translate }}</h2>
+        <p>{{ 'order.link_order_to_user' | translate }}</p>
+        <button [routerLink]="['/user/login']" [queryParams]="{ url1: 'shoppingcart/confirm' }" class="btn btn-primary btn-sm">
+          {{ 'auth.login' | translate }}
+        </button>
+      </div>
+    </ng-template>
+
+  </div>
+</div>

@@ -1,0 +1,50 @@
+<h2 >{{ 'auth.edit_credentials' | translate }}</h2>
+<form class="form-signin formsig" [formGroup]="userForm">
+
+	<div class="form-group">
+		<label for="email" >{{ 'auth.email' | translate }}</label>
+		<input type="{{ 'auth.email' | translate }}" placeholder="Email" formControlName="email" class="form-control">
+	</div>
+
+	<div class="form-group">
+		<label for="firstName" >{{ 'auth.firstname' | translate }}</label>
+		<input type="firstName" placeholder="{{ 'auth.firstname' | translate }}" formControlName="firstName" class="form-control">
+	</div>
+
+	<div class="form-group">
+		<label for="lastName" >{{ 'auth.lastname' | translate }}</label>
+		<input type="lastName" placeholder="{{ 'auth.lastname' | translate }}" formControlName="lastName" class="form-control">
+	</div>
+
+	<div class="form-group">
+		<label for="address" >{{ 'auth.address' | translate }}</label>
+		<input type="address" placeholder="{{ 'auth.address' | translate }}" formControlName="address" class="form-control">
+		<label class="sr-only">{{ 'auth.adress' | translate }}</label>
+	</div>
+
+	<div class="form-group">
+		<label for="city">{{ 'auth.city' | translate }}</label>
+		<input type="city" placeholder="{{ 'auth.city' | translate }}" formControlName="city" class="form-control">
+	</div>
+
+	<div class="form-group">
+		<label for="province" >{{ 'auth.province' | translate }}</label>
+		<input type="province" placeholder="{{ 'auth.province' | translate }}" formControlName="province" class="form-control">
+	</div>
+
+	<div class="form-group">
+		<label for="postalCode" >{{ 'auth.zipcode' | translate }}</label>
+		<input type="postalCode" placeholder="{{ 'auth.zipcode' | translate }}" formControlName="postalCode" class="form-control">
+	</div>
+
+	<div class="form-group">
+		<label for="country">{{ 'auth.country' | translate }}</label>
+		<input type="country" placeholder="{{ 'auth.country' | translate }}" formControlName="country" class="form-control">
+	</div>
+
+	<div *ngIf="error" class="alert alert-danger">{{error}}</div>
+
+	<button type="button" class="btn btn-lg btn-primary btn-block" (click)="onEditUser($event.target)" [disabled]="!userForm.valid">
+		{{ 'auth.edit_credentials' | translate }}
+	</button>
+</form>

@@ -1,0 +1,60 @@
+<form class="form-signin" [formGroup]="userForm">
+    <h2 class="form-signin-heading">{{ 'auth.confirm_credentials' | translate }}</h2>
+  
+    <div class="form-group">
+      <label for="email" class="sr-only">{{ 'auth.email' | translate }}</label>
+      <input type="{{ 'auth.email' | translate }}" placeholder="Email" formControlName="email" class="form-control">
+    </div>
+  
+    <div class="form-group">
+      <label for="firstName" class="sr-only">{{ 'auth.firstname' | translate }}</label>
+      <input type="firstName" placeholder="{{ 'auth.firstname' | translate }}" formControlName="firstName" class="form-control">
+    </div>
+  
+    <div class="form-group">
+      <label for="lastName" class="sr-only">{{ 'auth.lastname' | translate }}</label>
+      <input type="lastName" placeholder="{{ 'auth.lastname' | translate }}" formControlName="lastName" class="form-control">
+    </div>
+  
+    <div class="form-group">
+      <label for="address" class="sr-only">{{ 'auth.address' | translate }}</label>
+      <input type="address" placeholder="{{ 'auth.address' | translate }}" formControlName="address" class="form-control">
+    </div>
+  
+    <div class="form-group">
+      <label for="city" class="sr-only">{{ 'auth.city' | translate }}</label>
+      <input type="city" placeholder="{{ 'auth.city' | translate }}" formControlName="city" class="form-control">
+    </div>
+  
+    <div class="form-group">
+      <label for="province" class="sr-only">{{ 'auth.province' | translate }}</label>
+      <input type="province" placeholder="{{ 'auth.province' | translate }}" formControlName="province" class="form-control">
+    </div>
+  
+    <div class="form-group">
+      <label for="postalCode" class="sr-only">{{ 'auth.zipcode' | translate }}</label>
+      <input type="postalCode" placeholder="{{ 'auth.zipcode' | translate }}" formControlName="postalCode" class="form-control">
+    </div>
+  
+    <div class="form-group">
+      <label for="country" class="sr-only">{{ 'auth.country' | translate }}</label>
+      <input type="country" placeholder="{{ 'auth.country' | translate }}" formControlName="country" class="form-control">
+    </div>
+
+    <ng-container *ngIf="error">
+      <ng-container *ngIf="error === 'EmptyShoppingCart';else defaultError">
+        <p class="alert alert-danger">
+          {{ 'order.checkout_empty_cart_error' | translate }}
+        </p>
+      </ng-container>
+      <ng-template #defaultError>
+        <p class="alert alert-danger">
+          {{ 'order.checkout_error' | translate }}
+        </p>
+      </ng-template>
+    </ng-container>
+
+    <button type="button" class="btn btn-lg btn-primary btn-block" (click)="onSubmit()" [disabled]="!userForm.valid">
+      {{ 'auth.confirm' | translate }}
+    </button>
+  </form>

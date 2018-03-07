@@ -1,0 +1,165 @@
+<header>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="socials col-xs-9 col-sm-9 col-md-4 col-lg-4">
+        <ul>
+          <li class="facebook">
+            <a href="https://www.facebook.com/CAPSNEDERLAND/">
+              <i-facebook></i-facebook>
+            </a>
+          </li>
+          <li class="instagram">
+            <a href="https://www.instagram.com/caps_clothing/">
+              <i-instagram></i-instagram>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="socials col-xs-3 col-sm-3 visible-xs visible-sm">
+        <ul class="pull-right">
+          <li routerLinkActive="active" class="shoppingcart has-icon">
+            <a routerLink="/shoppingcart">
+              <i-shopping-cart></i-shopping-cart>
+              <span class="badge badge-sea rounded-x">{{productCount}}</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="personal-menu hidden-xs hidden-sm col-md-8 col-lg-8 pull-right">
+        <ul class="pull-right">
+          <li class="has-dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown">
+              <span>{{ 'language.name' | translate:ISOCODE }}</span>
+            </a>
+            <ul class="dropdown-menu">
+              <li>
+                <a data-value="nl-NL" (click)="switchLanguage('nl-NL')">{{ 'language.nl' | translate }}</a>
+              </li>
+              <li>
+                <a data-value="en-US" (click)="switchLanguage('en-US')">{{ 'language.en' | translate }}</a>
+              </li>
+            </ul>
+          </li>
+          <li *ngIf="status">
+            <a *ngIf="user?.admin === true" routerLink="/admindashboard">{{ 'menu.admin_dashboard' | translate }}</a>
+          </li>
+          <li *ngIf="status" class="account has-dropdown has-icon">
+            <a routerLink="/user/profile">
+              <i-user></i-user>
+              <span>{{user?.firstName}}</span>
+            </a>
+            <ul class="dropdown-menu usermenu">
+              <li>
+                <a routerLink="/user/profile">{{ 'auth.profile' | translate }}</a>
+              </li>
+              <li>
+                <a routerLink="/user/profile">{{ 'order.myorder' | translate }}</a>
+              </li>
+              <li>
+                <a routerLink="/user/logout">{{ 'auth.logout' | translate }}</a>
+              </li>
+            </ul>
+          </li>
+          <li *ngIf="!status">
+            <a routerLink="/user/login">{{ 'menu.login_register' | translate }}</a>
+          </li>
+          <li routerLinkActive="active" class="shoppingcart has-dropdown has-icon">
+            <a routerLink="/shoppingcart">
+              <i-shopping-cart></i-shopping-cart>
+              <span class="badge badge-sea rounded-x">{{productCount}}</span>
+            </a>
+            <ul class="dropdown-menu shoppingmenu">
+              <li>
+                <app-shopping-cart-dropdown></app-shopping-cart-dropdown>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="logo col-xs-4 col-sm-4 col-md-8 col-lg-12 col-md-offset-2 col-lg-offset-0">
+        <a routerLink="/">{{ 'header.title' | translate }}</a>
+      </div>
+      <div class="mobile-menu-column visible-xs visible-sm col-xs-8 col-sm-8">
+        <app-mobile-menu></app-mobile-menu>
+      </div>
+    </div>
+    <div class="row hidden-xs hidden-sm">
+      <nav class="main-menu col-xs-12 col-sm-12 col-md-12 col-md-12">
+        <ul>
+          <li *ngFor="let genders of keys" routerLinkActive="active" class="has-dropdown">
+            <a routerLink="/shop/{{genders.toLowerCase()}}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+              aria-expanded="false"> {{ genders }}
+            </a>
+            <ul class="dropdown-menu">
+              <ng-container *ngFor="let categories of menu.get(genders)">
+                <li>
+                  <a routerLink="/shop/{{genders.toLowerCase()}}/{{categories.toLowerCase()}}">{{ categories }}</a>
+                </li>
+              </ng-container>
+            </ul>
+          </li>
+          <li>
+            <a href="http://capssocialplatform.azurewebsites.net">{{ 'menu.community' | translate }}</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+  <div class="mobile-menu-container visible-xs visible-sm" id="mobile-menu-container">
+      <ul id="mobile-menu">
+        <li *ngIf="!status">
+          <a routerLink="/user/login">{{ 'menu.login_register' | translate }}</a>
+        </li>
+        <li *ngIf="status" class="has-dropdown">
+          <a>
+            <span class="caret"></span>
+            <span>{{user?.firstName}}</span>
+          </a>
+          <ul class="mobile-dropdown-menu">
+            <li>
+              <a routerLink="/user/profile">{{ 'auth.profile' | translate }}</a>
+            </li>
+            <li>
+              <a routerLink="/user/profile">{{ 'order.myorder' | translate }}</a>
+            </li>
+            <li>
+              <a routerLink="/user/logout">{{ 'auth.logout' | translate }}</a>
+            </li>
+          </ul>
+        </li>
+        <li class="has-dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown">
+            <span class="caret"></span>
+            <span>{{ 'language.name' | translate:ISOCODE }}</span>
+          </a>
+          <ul class="mobile-dropdown-menu">
+            <li>
+              <a data-value="nl-NL" (click)="switchLanguage('nl-NL')">{{ 'language.nl' | translate }}</a>
+            </li>
+            <li>
+              <a data-value="en-US" (click)="switchLanguage('en-US')">{{ 'language.en' | translate }}</a>
+            </li>
+          </ul>
+        </li>
+        <li *ngIf="status">
+          <a *ngIf="user?.admin === true" routerLink="/admindashboard">{{ 'menu.admin_dashboard' | translate }}</a>
+        </li>
+        <br />
+        <li class="has-dropdown" *ngFor="let genders of keys">
+          <a routerLink="/shop/{{genders.toLowerCase()}}">
+            <span class="caret"></span>
+            <span>{{ genders }}</span>
+          </a>
+          <ul class="mobile-dropdown-menu">
+            <li *ngFor="let categories of menu.get(genders)">
+              <a routerLink="/shop/{{genders.toLowerCase()}}/{{categories.toLowerCase()}}">{{ categories }}</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://capssocialplatform.azurewebsites.net">{{ 'menu.community' | translate }}</a>
+        </li>
+      </ul>
+    </div>
+</header>

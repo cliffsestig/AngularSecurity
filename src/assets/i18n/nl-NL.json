@@ -1,0 +1,123 @@
+{
+	"header": {
+		"title": "CÅPS"
+	},
+	"menu": {
+		"admin_dashboard": "Admin dashboard",
+		"home": "Home",
+		"male": "Mannen",
+		"female": "Vrouwen",
+		"caps": "Petten",
+		"community": "Community",
+		"account": "Account",
+		"wishlist": "Verlanglijst",
+		"products": "Producten",
+		"orders": "Bestellingen",
+		"view": "Bekijken",
+		"login_register": "Inloggen / registreren"
+	},
+	"auth": {
+		"login": "Inloggen",
+		"logout": "Uitloggen",
+		"profile": "Profiel",
+		"register": "Registreren",
+		"optional": "Optioneel",
+		"email": "Email",
+		"firstname": "Voornaam",
+		"lastname": "Achternaam",
+		"password": "Wachtwoord",
+		"password_specification": "(min. 6 karakters)",
+		"address": "Adres",
+		"city": "Plaats",
+		"province": "Provincie",
+		"zipcode": "Postcode",
+		"country": "Land",
+		"edit_credentials": "Gegevens wijzigen",
+		"confirm_credentials": "Gegevens bevestigen",
+		"edit": "Wijzigen",
+		"be_patient": "Even geduld...",
+		"confirm": "Bevestigen"
+	},
+	"cart": {
+		"cart_name": "Winkelwagen",
+		"price_total": "Totale prijs",
+		"buy": "Kopen",
+		"details": "Details"
+	},
+	"product": {
+		"article": "Artikel",
+		"articles": "Artikelen",
+		"img": "afbeeldingen",
+		"img_upload": "afbeeldingen uploaden",
+		"title": "Titel",
+		"category": "Categorie",
+		"size": "Maat",
+		"sizes": "Maten",
+		"gender": "Geslacht",
+		"color": "Kleur",
+		"name": "Naam",
+		"price": "Prijs",
+		"free": "Gratis",
+		"shipping_cost": "Verzendskosten",
+		"inclusive_vat": "inclusief BTW",
+		"quantity": "Hoeveelheid",
+		"add_to_shopping_cart": "Toevoegen aan winkelwagen"
+	},
+	"order": {
+		"name": "Bestelling",
+		"myorder": "Mijn bestellingen",
+		"orderid": "OrderID",
+		"status": "Status",
+		"amount_of_articles": "Aantal artikelen",
+		"total": "Totaal",
+		"pay": "Betalen",
+		"link_order_to_user": "Log in om deze bestelling aan uw account te koppelen",
+		"checkout": "Afrekenen",
+		"notfound": "Geen orders gevonden.. ga naar de ",
+		"webshop": "Webshop",
+		"checkout_error": "Er was een probleem met het verwerken van de aanvraag. Probeer het later opnieuw.",
+		"checkout_empty_cart_error": "Er zit geen product in je winkelwagen."
+	},
+	"admin": {
+		"go-to": "Ga naar",
+		"select": "Selecteer",
+		"title": "Titel",
+		"value": "Waarde",
+		"details": "Details",
+		"new": "Nieuw",
+		"manage": "Beheer",
+		"new_size": "Maat toevoegen",
+		"new_color": "Kleur toevoegen",
+		"color_code": "Kleurcode",
+		"product": "product",
+		"order": "bestelling",
+		"a_product": "een product",
+		"a_order": "een bestelling",
+		"edit": "Bewerk",
+		"remove": "Verwijder",
+		"new_image": "Nieuwe afbeelding"
+	},
+	"language": {
+		"name": "Taal ({{value}})",
+		"nl": "Nederlands",
+		"en": "Engels"
+	},
+	"greeting": "Welkom {{name}}",
+	"home": {
+		"welcome_text": "Welkom bij CÅPS!",
+		"welcome_subtext": "Dit is een ondertekst"
+	},
+	"gender": {
+		"gender": "Geslacht",
+		"male": "Heren",
+		"female": "Dames"
+	},
+	"save": "Opslaan",
+	"cancel": "Annuleren",
+	"processing": {
+		"paid": "De betaling is succesvol bedankt voor de aankoop",
+		"open": "Wachtend op betaling",
+		"failed": "De betaling is niet gelukt"
+	}
+
+}

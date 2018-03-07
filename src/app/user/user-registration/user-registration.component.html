@@ -1,0 +1,87 @@
+
+<form class="form-signin" [formGroup]="userForm">
+	<h2 class="form-signin-heading">{{ 'auth.register' | translate }}</h2>
+
+	<div class="form-group">
+		<label class="sr-only">{{ 'auth.email' | translate }}</label>
+		<input type="email"
+				formControlName="email"
+				class="form-control"
+				placeholder="{{ 'auth.email' | translate }}">
+	</div>
+
+	<div class="form-group">
+		<label class="sr-only">{{ 'auth.firstname' | translate }}</label>
+		<input type="text"
+				formControlName="firstName"
+				class="form-control"
+				placeholder="{{ 'auth.firstname' | translate }}">
+	</div>
+
+	<div class="form-group">
+		<label class="sr-only">{{ 'auth.lastname' | translate }}</label>
+		<input type="text"
+				formControlName="lastName"
+				class="form-control"
+				placeholder="{{ 'auth.lastname' | translate }}">
+	</div>
+
+	<div class="form-group">
+		<label class="sr-only">{{ 'auth.password' | translate }}</label>
+		<input type="password"
+				formControlName="password"
+				class="form-control"
+				placeholder="{{ 'auth.password' | translate }} {{ 'auth.password_specification' | translate }}">
+	</div>
+
+	<p><small>{{ 'auth.optional' | translate }}</small></p>
+
+	<div class="form-group">
+		<label class="sr-only">{{ 'auth.address' | translate }}</label>
+		<input type="text"
+				formControlName="address"
+				class="form-control"
+				placeholder="{{ 'auth.address' | translate }}">
+	</div>
+
+	<div class="form-group">
+		<label class="sr-only">{{ 'auth.city' | translate }}</label>
+		<input type="text"
+				formControlName="city"
+				class="form-control"
+				placeholder="{{ 'auth.city' | translate }}">
+	</div>
+
+	<div class="form-group">
+		<label class="sr-only">{{ 'auth.province' | translate }}</label>
+		<input type="text"
+				formControlName="province"
+				class="form-control"
+				placeholder="{{ 'auth.province' | translate }}">
+	</div>
+
+	<div class="form-group">
+		<label class="sr-only">{{ 'auth.zipcode' | translate }}</label>
+		<input type="text"
+				formControlName="postalCode"
+				class="form-control"
+				placeholder="{{ 'auth.zipcode' | translate }}">
+	</div>
+
+	<div class="form-group">
+		<label class="sr-only">{{ 'auth.country' | translate }}</label>
+		<input type="text"
+				formControlName="country"
+				class="form-control"
+				placeholder="{{ 'auth.country' | translate }}">
+	</div>
+
+	<div *ngIf="error" class="alert alert-danger">{{ error }}</div>
+
+	<button type="submit"
+			class="btn btn-lg btn-primary btn-block"
+			(click)="onRegister()"
+			[disabled]="!userForm.valid">
+				{{ 'auth.register' | translate }}
+	</button>
+</form>

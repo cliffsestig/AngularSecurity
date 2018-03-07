@@ -1,0 +1,83 @@
+<div class="row">
+	<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+		<div class="carousel">
+      <div class="carousel-inner">
+				<div class="product-image">
+	        <div *ngFor="let img of product?.imageUrl let i = index">
+	          <input class="carousel-open" type="radio" id="{{i}}" name="carousel" aria-hidden="true" hidden="" checked="checked">
+	          <div class="carousel-item">
+	              <img src="{{img}}">
+	          </div>
+	        </div>
+				</div>
+				<div class="product-thumbnails">
+					<ul class="carousel-indicators">
+							<li *ngFor="let img of product?.imageUrl let i = index">
+									<label for="{{i}}" class="carousel-bullet"><img src="{{img}}"></label>
+							</li>
+					</ul>
+				</div>
+		  </div>
+		</div>
+	</div>
+	<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+		<div class="product-info">
+			<div class="product-name">
+				<h1 title="{{ product?.name }}">{{ product?.name }}</h1>
+			</div>
+			<div class="product-price">
+				<span id="price">&#8364; {{ product?.price }}</span>
+				<span id="tax">{{ 'product.inclusive_vat' | translate }}</span>
+			</div>
+			<div class="product-description">
+				<p ng-hide="product?.category == null" id="category">
+					<strong>{{ 'product.category' | translate }}: </strong>
+					<span>{{ product?.category }}</span>
+				</p>
+				<p ng-hide="product?.gender == null" id="gender">
+					<strong>{{ 'product.gender' | translate }}: </strong>
+					<span>{{ product?.gender }}</span>
+				</p>
+				<p ng-hide="product?.sizes == null" id="sizes">
+					<strong>{{ 'product.sizes' | translate }}: </strong>
+					<span>{{product?.sizes}} </span>
+				</p>
+				<div class="form-group">
+					<label>{{ 'product.size' | translate }}:</label>
+					<select [(ngModel)]="selectedSize" class="form-control"  id="exampleFormControlSelect1">
+						<option *ngFor="let size of product?.sizes" [selected]="selectedSize">{{size}}</option>
+					</select>
+				</div>
+
+				<div class="form-group">
+					<label>{{ 'product.color' | translate }}:</label>
+					<div class="row">
+						<div class="radio color col-xs-6 col-sm-4 col-md-3 col-lg-2" *ngFor="let color of product?.colors">
+	  					<label>
+								<input class="btn btn-primary" type="radio" [(ngModel)]="selectedColor" name="{{color}}" value="{{color}}">
+								<span [style.background-color]="color"></span>
+							</label>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="add-to-cart">
+				<div class="row">
+					<div class="form-group col-xs-12 col-sm-12 col-lg-8 col-lg-6 pull-left">
+						<label>{{ 'product.quantity' | translate }}: </label>
+						<div class="form-group">
+							<div class="input-group">
+								<input class="input-sm form-control "[(ngModel)]="quantity" type="number" name="quantity" value="{{ quantity }}">
+								<span class="input-group-btn">
+									<button (click)="addToShoppingCart(product)" class="btn btn-primary btn-sm btnAdd" type="button">
+										{{ 'product.add_to_shopping_cart' | translate }}
+									</button>
+								</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+* {
+  font-family:Montserrat;
+}
+
+>>> .btn-primary {
+    color: #fff;
+    background-color: #7882ff;
+    border-color: #6C75E5;
+}
+
+>>> .btn-primary:hover {
+    color: #fff;
+    background-color: #6C75E5;
+    border-color: #6068CB;
+}
+
+>>> .btn-primary:active {
+    color: #fff;
+    background-color: #6068CB;
+    border-color: #545BB1;
+}
+
+>>> .btn-warning,
+>>> .btn-danger {
+    color: #fff;
+}
+
+>>> .btn-warning:hover,
+>>> .btn-danger:hover {
+    color: #fff;
+}
+
+>>> .btn-warning:active,
+>>> .btn-danger:active {
+    color: #fff;
+}

@@ -1,0 +1,21 @@
+<div class="col-xs-12 col-sm-6 col-md-12 col-lg-12 product">
+  <a style="cursor: pointer;" [routerLink]="[index]" routerLinkActive="active" class="list-group-item clearfix">
+    <div class="row">
+      <div class="col-xs-4 col-sm-3 col-md-3 col-lg-4">
+        <div class="product-image">
+          <img src="{{ product.imageUrl }}" class="img-responsive">
+        </div>
+      </div>
+      <div class="col-xs-8 col-sm-9 col-md-9 col-lg-8">
+        <h3>{{product.name}}</h3>
+        <span>{{ 'product.category' | translate }}: {{product.category}}</span>
+        <br>
+        <span>{{ 'product.gender' | translate }}: {{product.gender}}</span>
+        <br>
+        <span>{{ 'product.size' | translate }}: {{product?.sizes}}</span>
+        <br />
+        <span>{{ 'product.price' | translate }}: € {{ product.price | number :'1.2' }}</span>
+      </div>
+    </div>
+  </a>
+</div>

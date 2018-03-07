@@ -1,0 +1,40 @@
+<h2>{{ 'menu.orders' | translate }}</h2>
+<div class="orders">
+  <table *ngIf="orders?.length > 0; else notfound" class="table">
+    <thead>
+      <tr>
+        <th scope="col">#ID</th>
+        <th scope="col">{{ 'auth.email' | translate }}</th>
+        <th scope="col">{{ 'order.amount_of_articles' | translate }}</th>
+        <th scope="col">{{ 'cart.price_total' | translate }}</th>
+        <th scope="col">{{ 'order.status' | translate }}</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+    	<tr *ngFor="let order of orders">
+    		<th scope="row">
+          {{order._id}}
+        </th>
+        <td>
+          {{order.customer.email}}
+        </td>
+    		<td>
+          {{order.entries.length}}
+        </td>
+    		<td>
+          €{{order.totalPrice}}
+        </td>
+    		<td class="status">
+          <span class="label label-info">{{order.status}}</span>
+        </td>
+    		<td class="action">
+          <a [routerLink]="[order._id]">
+            <button class="btn btn-xs btn-primary">{{ 'menu.view' | translate }}</button>
+          </a>
+        </td>
+    	</tr>
+    </tbody>
+  </table>
+</div>
+<ng-template #notfound>{{ 'order.notfound' | translate }}<a routerLink="../../shop">{{ 'order.webshop' | translate }}</a></ng-template>

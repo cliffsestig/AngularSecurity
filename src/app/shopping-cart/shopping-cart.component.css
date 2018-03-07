@@ -1,0 +1,19 @@
+h3{
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+.txtQuantity{
+    width:100px;
+    text-indent: 10px;
+}
+.remove{
+    text-align: right;
+
+}
+.colorframe{
+    height: 15px;
+    width: 15px;
+    border-radius: 100%;
+    margin-right: 7px;
+    display: inline-block;
+}

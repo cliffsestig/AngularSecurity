@@ -1,0 +1,132 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+	padding:0;
+	margin:0 auto;
+}
+
+body > app-root > .container {
+	padding-top: 175px;
+	min-height:calc(100vh - 64px);
+	height:auto;
+}
+
+
+body.home app-root > .container,
+body.home app-root > .container > .row,
+body.home app-root > .container > .row > .col-md-12 {
+	width:inherit;
+	position:inherit;
+	padding:0;
+	margin:0;
+}
+
+body.home header {
+	background:transparent!important;
+}
+
+body.home .gradient {
+	height: 40vh;
+	width: 100%;
+	position: absolute;
+	z-index: 1;
+	pointer-events:none;
+}
+body.home .gradient-top {
+	top: 0;
+	left: 0;
+	background: -webkit-linear-gradient(#000, transparent);
+}
+
+body.home .gradient-bottom {
+	bottom: 0;
+	left: 0;
+	background: -webkit-linear-gradient(transparent, #000);
+}
+
+body.home .full-page {
+	position:absolute;
+	top:0;
+	left:0;
+	overflow:hidden;
+	height:100vh;
+	width:100vw;
+	display: table;
+	background-color:#000;
+}
+
+body.home .full-page > img {
+	position:absolute;
+	min-height:100%;
+	width:auto;
+	top:-9999px;
+	right:-9999px;
+	bottom:-9999px;
+	left:-9999px;
+	margin:auto;
+	pointer-events:none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-o-user-select: none;
+	user-select: none;
+	opacity:.8;
+}
+
+body.home .landing-text {
+	position:relative;
+	z-index:2;
+	display:table-cell;
+	vertical-align:middle;
+	text-align:center;
+	color:#fff;
+}
+
+body.home .landing-text > h2 {
+	font-weight:bold;
+	letter-spacing: 1px;
+	font-size:30pt;
+}
+
+body.home .landing-text > span {
+	display:block;
+	font-size:15pt;
+}
+
+body.home footer {
+	position:absolute!important;
+	background-color:transparent!important;
+}
+
+body.home footer * {
+	color:#fff;
+}
+
+@media (max-width: 992px) {
+	body.home .landing-text > h2 {
+		font-size:25pt;
+	}
+
+	body.home .landing-text > span {
+		font-size:12pt;
+	}
+}
+
+@media (max-width: 768px) {
+	body.home .landing-text > h2 {
+		font-size:22pt;
+	}
+
+	body.home .landing-text > span {
+		font-size:10pt;
+	}
+}
+
+@media (max-width: 576px) {
+	body.home .landing-text > h2 {
+		font-size:18pt;
+	}
+
+	body.home .landing-text > span {
+		font-size:8pt;
+	}
+}

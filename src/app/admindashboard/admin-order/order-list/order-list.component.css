@@ -1,0 +1,18 @@
+table {
+	width: 100%;
+}
+.status {
+	width: 1%;
+	white-space: nowrap;
+}
+.action {
+	width: 1%;
+	white-space: nowrap;
+}
+
+.orders {
+	height:auto;
+	position:relative;
+	width:100%;
+	overflow-x: auto;
+}

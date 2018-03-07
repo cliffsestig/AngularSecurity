@@ -1,0 +1,30 @@
+.link {
+
+	-webkit-box-shadow: 7px 8px 6px -6px  #999;
+	   -moz-box-shadow: 7px 8px 6px -6px  #999;
+	        box-shadow: 7px 8px 6px -6px #999;
+}
+
+.producttitle {
+    font-weight:bold;
+	padding:5px 0 5px 0;
+	text-transform: uppercase;
+}
+
+.productprice {
+	border-top:1px solid #dadada;
+	padding-top:5px;
+}
+
+.pricetext {
+	font-weight:bold;
+	font-size:1.4em;
+}
+.btnAdd{
+    height: 36px;
+}
+.productbox{
+    background-color:#ffffff;
+	padding:10px;
+	margin-bottom:10px;
+}

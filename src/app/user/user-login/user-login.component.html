@@ -1,0 +1,23 @@
+<form class="form-signin" [formGroup]="userForm">
+	<h2 class="form-signin-heading">{{ 'auth.login' | translate }}</h2>
+
+	<div class="form-group">
+		<label class="sr-only">{{ 'auth.email' | translate }}</label>
+		<input type="email" formControlName="email" class="form-control" placeholder="{{ 'auth.email' | translate }}">
+	</div>
+
+	<div class="form-group">
+		<label for="app-pw-input-field" class="sr-only">{{ 'auth.password' | translate }}</label>
+		<input id="app-pw-input-field" type="password" formControlName="password" class="form-control" placeholder="{{ 'auth.password' | translate }}">
+	</div>
+
+	<div *ngIf="error" class="alert alert-danger">{{ error }}</div>
+	<re-captcha (captchaResponse)="handleCorrectCaptcha($event)" site_key="<6Lf8oUkUAAAAAC0G9lWVGdDuSBgQx7SA0aWdSfd6>"></re-captcha>
+	<button type="submit" class="btn btn-lg btn-success btn-block" (click)="onLoginUser()" [disabled]="!userForm.valid  && !captcha">
+		{{ 'auth.login' | translate }}
+	</button>
+	<hr>
+	<a routerLink="/user/register" class="btn btn-lg btn-primary btn-block">
+		{{ 'auth.register' | translate }}
+	</a>
+</form>

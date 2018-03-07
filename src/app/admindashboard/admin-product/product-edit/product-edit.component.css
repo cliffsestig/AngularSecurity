@@ -1,0 +1,60 @@
+.product-form {
+  padding-top:23px;
+}
+
+.product-edit, .product-edit-submit {
+  margin-top:23px;
+}
+.input-group-addon.addon-danger {
+  color: #fff;
+  background-color: #d9534f;
+  border-color: #d43f3a;
+  cursor: pointer;
+}
+.input-group-addon.addon-danger:hover {
+  color: #fff;
+  background-color: #c9302c;
+  border-color: #ac2925;
+}
+.form-group {
+  overflow: hidden;
+}
+.form-group .input-group {
+  margin-bottom: 10px;
+}
+.form-color {
+  padding: 0;
+  border: 0;
+  width: 34px;
+  display: inline-block;
+  border-radius: 10px;
+  box-shadow: none;
+  overflow: hidden;
+  transition: inherit;
+  height: 36px;
+  top: -4px;
+  right: 32px;
+  z-index: 2;
+  position: absolute;
+  cursor:pointer;
+}
+
+.input-group.color span {
+  position:relative;
+  z-index:2;
+}
+.remove{
+  border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+.image-responsive{
+  padding-right: 1px;
+}
+
+label[for="imageUrl"] {
+  display:block;
+}
+
+label[for="imageUrl"]:first-letter {
+  text-transform:uppercase;
+}

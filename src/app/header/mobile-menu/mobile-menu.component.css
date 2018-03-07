@@ -1,0 +1,22 @@
+#nav-icon {
+  display: inline-block;
+  cursor: pointer;
+}
+#nav-icon div {
+  width: 36px;
+  height: 5px;
+  background-color: #fff;
+  margin: 6px 0;
+  transition: 0.2s;
+}
+#nav-icon.open div:nth-child(1) {
+  -webkit-transform: rotate(-45deg) translate3d(-8px, 6px, 0);
+  transform: rotate(-45deg) translate3d(-8px, 6px, 0);
+}
+#nav-icon.open div:nth-child(2) {
+  opacity: 0;
+}
+#nav-icon.open div:nth-child(3) {
+  -webkit-transform: rotate(45deg) translate3d(-9px, -8px, 0);
+  transform: rotate(45deg) translate3d(-9px, -8px, 0);
+}

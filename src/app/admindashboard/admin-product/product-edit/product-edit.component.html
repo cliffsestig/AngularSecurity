@@ -1,0 +1,89 @@
+<label for="imageUrl">{{ 'product.img' | translate }}</label>
+<div class="row">
+  <div class="col-xs-3" *ngFor="let imgpath of productImages;let i = index">
+      <span class="input-group-addon remove addon-danger" (click)="onDeleteUploadedfile(i)">X</span><img [src]="imgpath" class="img-responsive"/>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+
+      <div class="form-group">
+        <span>{{ 'product.img_upload' | translate }}</span>
+        <ng-container formArrayName="imageUrl">
+          <ng-container *ngFor="let productCtrl of productForm['controls'].imageUrl['controls']; let i = index" [formGroupName]="i">
+            <div class="input-group">
+              <input type="file" class="form-control" [id]="i" #fileInput formControlName="path">
+              <a class="input-group-addon  btn btn-success" (click)="onUploadFile(i,$event)">Upload</a>
+              <span class="input-group-addon addon-danger" (click)="onDeletefile(i)">X</span>
+            </div>
+          </ng-container>
+          <button type="button" class="btn btn-success btn-sm pull-right" (click)="onAddfile()">{{ 'admin.new_image' | translate }}</button>
+        </ng-container>
+      </div>
+  <div class="form-group">
+    <label for="name">{{ 'product.name' | translate }}</label>
+    <input type="text" id="name" formControlName="name" class="form-control">
+  </div>
+
+  <div class="form-group">
+    <label for="category">{{ 'product.category' | translate }}</label>
+    <input type="text" id="category" formControlName="category" class="form-control">
+  </div>
+
+  <div class="form-group">
+    <label for="gender">{{ 'gender.gender' | translate }}</label>
+    <select id="gender" formControlName="gender" class="form-control">
+      <option value="Men">{{ 'gender.male' | translate }}</option>
+      <option value="Woman">{{ 'gender.female' | translate }}</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="price">{{ 'product.price' | translate }}</label>
+    <input type="text" id="price" formControlName="price" class="form-control">
+  </div>
+
+  <div class="form-group">
+    <label for="sizes">{{ 'product.size' | translate }}</label>
+    <ng-container formArrayName="sizes">
+      <ng-container *ngFor="let productCtrl of productForm['controls'].sizes['controls']; let i = index" [formGroupName]="i">
+        <div class="input-group">
+          <input type="text" class="form-control" formControlName="name">
+          <span class="input-group-addon addon-danger" (click)="onDeleteSize(i)">X</span>
+        </div>
+      </ng-container>
+
+      <button type="button" class="btn btn-success btn-sm pull-right" (click)="onAddSize()">{{ 'admin.new_size' | translate }}</button>
+    </ng-container>
+  </div>
+
+  <div class="form-group clear-both">
+    <div class="row">
+      <div class="col-md-12">
+        <label for="colors">{{ 'product.color' | translate }}</label>
+      </div>
+    </div>
+    <ng-container formArrayName="colors">
+      <div class="row">
+        <ng-container *ngFor="let productCtrl of productForm['controls'].colors['controls']; let i = index" [formGroupName]="i">
+          <div class="col-xs-4 col-sm-2 col-md-2 col-lg-2">
+            <div class="input-group color">
+              <input type="color" class="form-control form-color" formControlName="name">
+              <span class="input-group-addon addon-danger" (click)="onDeleteColor(i)">X</span>
+            </div>
+          </div>
+        </ng-container>
+      </div>
+
+      <button type="button" class="btn btn-success btn-sm pull-right" (click)="onAddColor()">{{ 'admin.new_color' | translate }}</button>
+    </ng-container>
+  </div>
+
+  <div class="clear-both">
+    <button type="button" class="btn btn-danger" (click)="onCancel()">{{ 'cancel' | translate }}</button>
+    <button type="submit" class="btn btn-success" [disabled]="!productForm.valid">{{ 'save' | translate }}</button>
+  </div>
+</form>
+</div>
+</div>

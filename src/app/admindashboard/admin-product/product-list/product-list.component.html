@@ -1,0 +1,12 @@
+<div class="row">
+    <div class="col-xs-12">
+      <button class="btn btn-success btns" (click)="onNewProduct()">{{ 'admin.new' | translate }} {{ 'admin.product' | translate }}</button>
+    </div>
+  </div>
+  <hr>
+  <div class="row">
+    <app-product-item
+      *ngFor="let item of products;"
+      [product]="item"
+      [index]="item._id"></app-product-item>
+  </div>
