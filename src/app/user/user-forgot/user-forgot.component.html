@@ -1,0 +1,12 @@
+<form class="form-signin" [formGroup]="forgotForm">
+	<h2 class="form-signin-heading">{{ 'auth.forgot' | translate }}</h2>
+
+	<div class="form-group">
+		<label class="sr-only">{{ 'auth.email' | translate }}</label>
+		<input type="email" formControlName="email" class="form-control" placeholder="{{ 'auth.email' | translate }}">
+	</div>
+	
+	<button type="submit" class="btn btn-lg btn-success btn-block" (click)="onForgotPassword()" [disabled]="!forgotForm.valid">
+		{{ 'auth.forgot' | translate }}
+	</button>
+</form>

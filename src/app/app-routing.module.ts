@@ -8,7 +8,9 @@ import { ProductDetailComponent } from './product/product-detail/product-detail.
 import { UserComponent } from './user/user.component';
 import { UserRegistrationComponent } from './user/user-registration/user-registration.component';
 import { UserLoginComponent } from './user/user-login/user-login.component';
+import { UserForgotComponent } from './user/user-forgot/user-forgot.component';
 import { UserLogoutComponent } from './user/user-logout/user-logout.component';
+import { UserResetComponent } from './user/user-reset/user-reset.component';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { UserEditComponent } from './user/user-edit/user-edit.component';
 import { AdmindashboardComponent } from './admindashboard/admindashboard.component';
@@ -43,7 +45,9 @@ const appRoutes: Routes = [
 			{ path: 'logout', component: UserLogoutComponent },
 			{ path: 'edit', component: UserEditComponent },
 			{ path: 'profile', component: ProfileComponent},
-			{ path: 'profile/:id', component: OrderDetailComponent}
+			{ path: 'profile/:id', component: OrderDetailComponent},
+			{ path: 'forgot', component: UserForgotComponent},
+			{ path: 'reset/:id', component: UserResetComponent}
 		]
 	},
 	{ path: 'shoppingcart', component: ShoppingCartComponent },

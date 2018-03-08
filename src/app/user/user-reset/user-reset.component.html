@@ -1,0 +1,12 @@
+<form class="form-signin" [formGroup]="resetForm">
+	<h2 class="form-signin-heading">{{ 'auth.reset' | translate }}</h2>
+
+	<div class="form-group">
+		<label for="app-pw-input-field" class="sr-only">{{ 'auth.password' | translate }}</label>
+		<input id="app-pw-input-field" type="password" formControlName="password" class="form-control" placeholder="{{ 'auth.password' | translate }}">
+	</div>
+	
+	<button type="submit" class="btn btn-lg btn-success btn-block" (click)="onResetPassword()" [disabled]="!resetForm.valid">
+		{{ 'auth.reset' | translate }}
+	</button>
+</form>

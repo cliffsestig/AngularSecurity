@@ -57,6 +57,8 @@ import { ShoppingCartConfirmationFormComponent } from './shopping-cart/shopping-
 import { imageService } from './services/image.service';
 import { ProcessingPaymentService } from './services/processing-payment.service';
 import { ReCaptchaModule } from 'angular2-recaptcha';
+import { UserForgotComponent } from './user/user-forgot/user-forgot.component';
+import { UserResetComponent } from './user/user-reset/user-reset.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
 	return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -94,6 +96,8 @@ export function HttpLoaderFactory(http: HttpClient) {
 		ShoppingCartConfirmationComponent,
 		ShoppingCartConfirmationFormComponent,
 		ProcessingComponent,
+		UserForgotComponent,
+		UserResetComponent,
 	],
 	imports: [
 		BrowserModule,

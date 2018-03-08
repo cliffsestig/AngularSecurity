@@ -19,6 +19,8 @@
 	"auth": {
 		"login": "Inloggen",
 		"logout": "Uitloggen",
+		"forgot": "Wachtwoord vergeten",
+		"reset": "Reset je wachtwoord",
 		"profile": "Profiel",
 		"register": "Registreren",
 		"optional": "Optioneel",

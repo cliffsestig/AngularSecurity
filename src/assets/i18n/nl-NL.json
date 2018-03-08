@@ -20,6 +20,8 @@
 		"login": "Inloggen",
 		"logout": "Uitloggen",
 		"profile": "Profiel",
+		"forgot": "Wachtwoord vergeten",
+		"reset": "Reset je wachtwoord",
 		"register": "Registreren",
 		"optional": "Optioneel",
 		"email": "Email",
